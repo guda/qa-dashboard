@@ -1,0 +1,8 @@
+../.metadata/
+../RemoteSystemsTempFiles/
+.classpath
+.gitignore.swp
+.project
+.settings/
+
+.idea
