@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{screenshot-default}">
+<head>
+    <title>Create Screenshot</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/screenshot" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Screenshot</a>
+        </h3>
+        <h2>Create Screenshot</h2>
+        <form action="/screenshot-save">
+            <div class="form-group">
+                <label for="email">Screenshot Name:</label>
+                <input type="text" class="form-control" name="screenshotName" />
+            </div>
+            <div class="form-group">
+                <label for="email">Screenshot Description</label>
+                <textarea class="form-control" name="screenshotDesc" cols="60" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Screenshot Image URL:</label>
+                <input type="url" class="form-control" name="screenshotUrl" />
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

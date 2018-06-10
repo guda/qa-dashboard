@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{screenshot-default}">
+<head>
+    <title>Screenshot List</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/screenshot-create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Screenshot</a>
+        </h3>
+        <h2>Screenshot List</h2>
+        <div class="table-responsive">
+            <table class="table" id="screenshot-table">
+                <thead>
+                <tr>
+                    <th>Screenshot Name</th>
+                    <th>Screenshot Desc</th>
+                    <th>Screenshot Url</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="screenshot : ${screenshots}">
+                    <td><a th:text="${screenshot.screenshotName}" th:href="@{'/screenshot-show/' + ${screenshot.id}}"></a></td>
+                    <td th:text="${screenshot.screenshotDesc}"></td>
+                    <td th:text="${screenshot.screenshotUrl}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
