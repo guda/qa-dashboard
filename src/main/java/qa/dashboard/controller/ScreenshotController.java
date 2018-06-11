@@ -15,6 +15,11 @@ public class ScreenshotController {
     @Autowired
     ScreenshotRepository screenshotRepository;
 
+    @RequestMapping(value = "/")
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping("/screenshot")
     public String screenshot(Model model) {
         model.addAttribute("screenshots", screenshotRepository.findAll());
