@@ -3,9 +3,8 @@ package qa.dashboard.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import qa.dashboard.model.Screenshot;
 import qa.dashboard.repository.ScreenshotRepository;
 
@@ -37,9 +36,26 @@ public class ScreenshotController {
         screenshot.setScreenshotName(screenshotName);
         screenshot.setScreenshotDesc(screenshotDesc);
         screenshot.setScreenshotUrl(screenshotUrl);
+
+        ModelAndView mav = saveScreenshot(screenshot);
+
+        //saveScreenshot(screenshot).getView();
+        //screenshotRepository.save(screenshot);
+
+        return mav.getViewName();
+    }
+
+    @PostMapping("screenshot/create")
+    public ModelAndView saveScreenshot(@RequestBody Screenshot screenshot) {
         screenshotRepository.save(screenshot);
 
-        return "redirect:/screenshot-show/" + screenshot.getId();
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("screenshot", screenshot);
+        mav.setViewName("redirect:/screenshot-show/" + screenshot.getId());
+
+        return mav;
+
+//        return new ResponseEntity<>(screenshot, HttpStatus.OK);
     }
 
     @RequestMapping("/screenshot-show/{id}")
