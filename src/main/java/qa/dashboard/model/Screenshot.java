@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Screenshot {
 
     @Id
-    String id;
-    String screenshotName;
-    String screenshotDesc;
-    String screenshotUrl;
+    private String id;
+    private String screenshotName;
+    private String screenshotDesc;
+    private String screenshotUrl;
 
     public Screenshot() {
     }

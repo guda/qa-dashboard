@@ -11,23 +11,18 @@ import qa.dashboard.repository.ScreenshotRepository;
 @Controller
 public class ScreenshotController {
 
-    @Autowired
-    ScreenshotRepository screenshotRepository;
+    final
+    private ScreenshotRepository screenshotRepository;
 
-    @RequestMapping(value = "/")
-    public String index() {
-        return "index";
+    @Autowired
+    public ScreenshotController(ScreenshotRepository screenshotRepository) {
+        this.screenshotRepository = screenshotRepository;
     }
 
     @RequestMapping("/screenshot")
     public String screenshot(Model model) {
         model.addAttribute("screenshots", screenshotRepository.findAll());
         return "screenshot";
-    }
-
-    @RequestMapping("/screenshot-create")
-    public String screenshotCreate() {
-        return "screenshot-create";
     }
 
     @RequestMapping("/screenshot-save")
@@ -45,7 +40,12 @@ public class ScreenshotController {
         return mav.getViewName();
     }
 
-    @PostMapping("screenshot/create")
+    @RequestMapping("/screenshot-create")
+    public String screenshotCreate() {
+        return "screenshot-create";
+    }
+
+    @PostMapping("/screenshot/create")
     public ModelAndView saveScreenshot(@RequestBody Screenshot screenshot) {
         screenshotRepository.save(screenshot);
 
