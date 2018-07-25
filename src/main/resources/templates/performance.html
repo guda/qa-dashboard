@@ -7,18 +7,18 @@
 </head>
 <body>
 <div layout:fragment="content" class="row">
-    <div class="col-xs-8 col-md-8">
+    <div class="col-xs-8 col-md-12">
         <h3>Performance Test</h3>
         <div class="row">
             <h6>Check environment(s) to run your tests in:</h6>
-            <div class="col-xs-8 col-md-8">
+            <div class="col-xs-8 col-md-12">
                 <form>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="env-dev" name="radio-stacked" required>
+                        <input type="radio" class="custom-control-input" id="env-dev" name="radio-stacked-env" required>
                         <label class="custom-control-label" for="env-dev">Development</label>
                     </div>
                     <div class="custom-control custom-radio mb-3">
-                        <input type="radio" class="custom-control-input" id="env-prd" name="radio-stacked"
+                        <input type="radio" class="custom-control-input" id="env-prd" name="radio-stacked-env"
                                required>
                         <label class="custom-control-label" for="env-prd">Production</label>
                         <div class="invalid-feedback">Selecting environment under test is mandatory</div>

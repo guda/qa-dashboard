@@ -8,38 +8,39 @@
 </head>
 <body>
 <div layout:fragment="content" class="row">
-    <div class="col-xs-8 col-md-8">
+    <div class="col-xs-8 col-md-12">
         <h3>API Test</h3>
         <div class="row">
             <h6>Check environment(s) to run your tests in:</h6>
-            <div class="col-xs-8 col-md-8">
+            <div class="col-xs-8 col-md-12">
                 <form>
                     <div th:replace="fragments/env :: env"></div>
 
                     <h6>Select what to test:</h6>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="accounts">
-                        <label class="form-check-label" for="accounts">Accounts</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="availability" name="radio-stacked" required>
+                        <label class="custom-control-label" for="availability">Availability</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="charts">
-                        <label class="form-check-label" for="charts">Charts</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="sanity" name="radio-stacked" required>
+                        <label class="custom-control-label" for="sanity">Sanity</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="geobuffer">
-                        <label class="form-check-label" for="geobuffer">Geobuffer</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="regression" name="radio-stacked" required>
+                        <label class="custom-control-label" for="regression">Regression</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="availability">
-                        <label class="form-check-label" for="availability">Availability</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="accounts" name="radio-stacked" required>
+                        <label class="custom-control-label" for="accounts">Accounts</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sanity">
-                        <label class="form-check-label" for="sanity">Sanity</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="charts" name="radio-stacked" required>
+                        <label class="custom-control-label" for="charts">Charts</label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="regression">
-                        <label class="form-check-label" for="regression">Regression</label>
+                    <div class="custom-control custom-radio mb-3">
+                        <input type="radio" class="custom-control-input" id="geobuffer" name="radio-stacked" required>
+                        <label class="custom-control-label" for="geobuffer">Geobuffer</label>
+                        <div class="invalid-feedback">Selecting environment under test is mandatory</div>
                     </div>
 
                     <h6></h6>
