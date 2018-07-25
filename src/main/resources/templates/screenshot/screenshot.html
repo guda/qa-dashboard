@@ -10,7 +10,7 @@
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
         <h3>
-            <a href="/screenshot-create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Screenshot</a>
+            <a href="/screenshot/create" class="btn btn-primary">New Screenshot</a>
         </h3>
         <h2>Screenshot List</h2>
         <div class="table-responsive">
@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="screenshot : ${screenshots}">
-                    <td><a th:text="${screenshot.screenshotName}" th:href="@{'/screenshot-show/' + ${screenshot.id}}"></a></td>
+                    <td><a th:text="${screenshot.screenshotName}" th:href="@{'/screenshot/show/' + ${screenshot.id}}"></a></td>
                     <td th:text="${screenshot.screenshotDesc}"></td>
                     <td th:text="${screenshot.screenshotUrl}"></td>
                 </tr>

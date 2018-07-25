@@ -10,10 +10,10 @@
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
         <h3>
-            <a href="/screenshot" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Screenshot</a>
+            <a href="/screenshot" class="btn btn-primary">All Screenshot</a>
         </h3>
         <h2>Edit Screenshot</h2>
-        <form action="/screenshot-update">
+        <form action="/screenshot/update">
             <div class="form-group">
                 <label for="email">Screenshot Name:</label>
                 <input type="text" class="form-control" name="screenshotName" th:value="${screenshot.screenshotName}"/>

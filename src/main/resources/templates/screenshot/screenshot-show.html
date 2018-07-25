@@ -10,7 +10,7 @@
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
         <h3>
-            <a href="/screenshot" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> Screenshot</a>
+            <a href="/screenshot" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> All Screenshot</a>
         </h3>
         <h2 th:text="${screenshot.screenshotName}"></h2>
         <h2><img th:src="${screenshot.screenshotUrl}" width="200"/></h2>
@@ -18,11 +18,11 @@
             <dt>Screenshot Description</dt>
             <dd th:text="${screenshot.screenshotDesc}"></dd>
         </dl>
-        <form action="/screenshot-delete">
+        <form action="/screenshot/delete">
             <input type="hidden" name="id" th:value="${screenshot.id}"/>
             <h2>
                 <input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure?');"/>
-                <a th:href="@{'/screenshot-edit/' + ${screenshot.id}}" class="btn btn-warning">Edit</a>
+                <a th:href="@{'/screenshot/edit/' + ${screenshot.id}}" class="btn btn-warning">Edit</a>
             </h2>
         </form>
     </div>
