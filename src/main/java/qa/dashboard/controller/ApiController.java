@@ -1,14 +1,14 @@
 package qa.dashboard.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/api")
 public class ApiController {
 
-    @RequestMapping("/api")
+    @RequestMapping()
     public String api() {
-        return "api";
+        return "api/api";
     }
 }
